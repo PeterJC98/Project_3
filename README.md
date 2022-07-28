@@ -9,7 +9,7 @@
 ![](Images/Wall_St_3.jpg)
 
 ## Purpose
-The idea of this project is to develop a screener that identifies stocks listed on the NASDAQ market that are breaking their 52-week highs or lows and then, overlay the list with additional indicators to support decision making such as,
+The idea of this project is to develop a tool that helps the decisions making process in entering and exiting a stock or ETF/index through technical indicators.  The main focus is on the Nasdaq index and a screener that indentifies stocks listed in the index that are potentially forming a turning point where they may either move in a bullish or bearish direction.  market that are breaking their 52-week highs or lows and then, overlay the list with additional indicators to support decision making such as,
 
 *   PE ratio
 *   Momentum indicator
