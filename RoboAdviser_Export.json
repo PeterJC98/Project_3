@@ -1,0 +1,385 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0",
+    "importType": "LEX",
+    "importFormat": "JSON"
+  },
+  "resource": {
+    "name": "RoboAdviser",
+    "version": "11",
+    "intents": [
+      {
+        "rejectionStatement": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "We will be pleased to assist, just let us know when you're ready."
+            }
+          ]
+        },
+        "name": "RecommendPortfolio",
+        "version": "80",
+        "fulfillmentActivity": {
+          "codeHook": {
+            "uri": "arn:aws:lambda:ap-southeast-2:443351395398:function:recommendPortfolio",
+            "messageVersion": "1.0"
+          },
+          "type": "CodeHook"
+        },
+        "sampleUtterances": [
+          "I want to save money for my retirement",
+          "I'm {age} and I would like to invest for my retirement",
+          "I'm {age} and I want to invest for my retirement",
+          "I want the best option to invest for my retirement",
+          "I'm worried about my retirement",
+          "I want to invest for my retirement",
+          "I would like to invest for my retirement",
+          "I'd like to plan for my retirement",
+          "I'd like a meeting with {chooseAdviser} about investing",
+          "I'd like to book a meeting with {chooseAdviser}",
+          "I'd like to meet with one of your advisers please",
+          "I'd like to book an appointment",
+          "book an appointment",
+          "I have {investmentAmount} to invest and need to book appointment",
+          "I have {investmentAmount} to invest and want to see an adviser"
+        ],
+        "slots": [
+          {
+            "sampleUtterances": [],
+            "slotType": "AMAZON.NUMBER",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Required",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "{firstName} can we have your age?"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 2,
+            "name": "age"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "chooseAdviser",
+            "slotTypeVersion": "1",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Required",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "{firstName}, let us know who you would like to meet/chat with"
+                }
+              ],
+              "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[{\"imageUrl\":\"https://p3fp.com.au/wp-content/uploads/2021/03/JIM-CROPPED-142-243x300-1.jpg\",\"subTitle\":\"Investment, Shares, SMSF and more\",\"title\":\"Jim\",\"buttons\":[{\"text\":\"Meet with Jim \",\"value\":\"Jim\"}]},{\"imageUrl\":\"https://p3fp.com.au/wp-content/uploads/2021/03/Jon-1-e1615858934320-150x150.jpg\",\"subTitle\":\"Investment, Shares, Aged Care, and more\",\"title\":\"Jon\",\"buttons\":[{\"text\":\"Meet with Jon\",\"value\":\"Jon\"}]},{\"imageUrl\":\"https://p3fp.com.au/wp-content/uploads/2021/03/Blaine-285x300-1.jpg\",\"subTitle\":\"Investment, Insurances, Super, Aged Care and more\",\"title\":\"Blaine\",\"buttons\":[{\"text\":\"Meet with Blaine\",\"value\":\"Blaine\"}]},{\"imageUrl\":\"https://p3fp.com.au/wp-content/uploads/2021/03/Maria-200x300-1.jpg\",\"subTitle\":\"Investment, Insurances, Aged Care and more \",\"title\":\"Maria\",\"buttons\":[{\"text\":\"Meet with Maria \",\"value\":\"Maria\"}]}]}",
+              "maxAttempts": 2
+            },
+            "priority": 8,
+            "defaultValueSpec": {
+              "defaultValueList": []
+            },
+            "name": "chooseAdviser"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "AMAZON.FirstName",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Required",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "Could you please give me your name?"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 1,
+            "name": "firstName"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "AMAZON.EmailAddress",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Required",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "Please supply your email address for follow up after this chat. "
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 3,
+            "name": "getEmail"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "AMAZON.NUMBER",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Required",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "How much do you want to invest?"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 4,
+            "name": "investmentAmount"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "AMAZON.DATE",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Required",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "What is your next availability for an initial catch up/teams meeting - please select a day/date from this link?"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 6,
+            "name": "meetingDate"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "AMAZON.TIME",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Required",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "Is there a preferred time that day?"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 7,
+            "name": "meetingTime"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "preferredMeet",
+            "slotTypeVersion": "1",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Required",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "Your initial meeting preference:"
+                }
+              ],
+              "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[{\"imageUrl\":\"https://sm.pcmag.com/t/pcmag_au/review/s/samsung-ga/samsung-galaxy-s21-ultra_rk1g.1920.jpg\",\"subTitle\":\"15/20 Minute phone call \",\"title\":\"Phone call\",\"buttons\":[{\"text\":\"Phone\",\"value\":\"Call\"}]},{\"imageUrl\":\"https://cdn.mos.cms.futurecdn.net/jK5jNkhZCQ7GmZicVDYdAc-970-80.jpg.webp\",\"subTitle\":\"Teams or other suitable\",\"title\":\"Virtual meeting\",\"buttons\":[{\"text\":\"Virtual catch up \",\"value\":\"Virtual meet\"}]},{\"imageUrl\":\"https://eztalks.com/res/2021/03-16/14/4636533a11f27b6167472356a288cb82.jpg\",\"subTitle\":\"1 hour personal meeting \",\"title\":\"Face to Face \",\"buttons\":[{\"text\":\"In person\",\"value\":\"Face to Face\"}]}]}",
+              "maxAttempts": 2
+            },
+            "priority": 9,
+            "defaultValueSpec": {
+              "defaultValueList": []
+            },
+            "name": "preferredMeet"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "riskLevel",
+            "slotTypeVersion": "7",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Required",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "If you've completed the risk profiler (link here) What level of risk are you willing to accept?"
+                }
+              ],
+              "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[{\"imageUrl\":\"https://images.freeimages.com/images/large-previews/51c/sad-man-1238964.jpg\",\"subTitle\":\"No more than 30% or so in Growth assets\",\"title\":\"Very Low or Low\",\"buttons\":[{\"text\":\"Very Low\",\"value\":\"Very Low\"},{\"text\":\"Low\",\"value\":\"Low\"}]},{\"imageUrl\":\"https://media.istockphoto.com/photos/close-up-portrait-of-woman-while-loo0king-up-in-the-city-picture-id932096974?k=20&m=932096974&s=612x612&w=0&h=WE2G8HecJW2vTgoanEzwwJJoe9RPfVK3iUHVSFBQUzg=\",\"subTitle\":\"No more than 30% in Defensive assets\",\"title\":\"Medium\",\"buttons\":[{\"text\":\"Medium\",\"value\":\"Medium\"}]},{\"imageUrl\":\"https://media.istockphoto.com/photos/portrait-of-young-smiling-woman-face-partially-covered-with-flying-picture-id1297159365?k=20&m=1297159365&s=612x612&w=0&h=RHC5Qy40yAgwmpZVj0vXKUzcUm6qrY2MSSWzj2nLQlg=\",\"subTitle\":\"Between 80 - 100% in Growth assets \",\"title\":\"High or Very High\",\"buttons\":[{\"text\":\"High\",\"value\":\"High\"},{\"text\":\"Very High \",\"value\":\"Very High\"}]}]}",
+              "maxAttempts": 2
+            },
+            "priority": 11,
+            "defaultValueSpec": {
+              "defaultValueList": []
+            },
+            "name": "riskLevel"
+          }
+        ],
+        "followUpPrompt": {
+          "prompt": {
+            "messages": [
+              {
+                "groupNumber": 1,
+                "contentType": "PlainText",
+                "content": "Thanks for visiting our site today."
+              },
+              {
+                "groupNumber": 1,
+                "contentType": "PlainText",
+                "content": "What is your preferred contact, mobile or email?"
+              }
+            ],
+            "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[{\"subTitle\":\"Additional data\",\"title\":\"Proceed\",\"buttons\":[{\"text\":\"Provide additional data to commence investment\",\"value\":\"Provide additional data to commence investment \"}]}]}",
+            "maxAttempts": 3
+          },
+          "rejectionStatement": {
+            "messages": [
+              {
+                "groupNumber": 1,
+                "contentType": "PlainText",
+                "content": "Ok, we are here to assist you anytime"
+              }
+            ]
+          }
+        },
+        "confirmationPrompt": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "Would you like {chooseAdviser} to search for the best investment portfolio for you now?"
+            }
+          ],
+          "maxAttempts": 3
+        },
+        "dialogCodeHook": {
+          "uri": "arn:aws:lambda:ap-southeast-2:443351395398:function:recommendPortfolio",
+          "messageVersion": "1.0"
+        }
+      }
+    ],
+    "slotTypes": [
+      {
+        "description": "Level of risk accepted",
+        "name": "riskLevel",
+        "version": "7",
+        "enumerationValues": [
+          {
+            "value": "High",
+            "synonyms": [
+              "pumping"
+            ]
+          },
+          {
+            "value": "Very Low",
+            "synonyms": [
+              "bit"
+            ]
+          },
+          {
+            "value": "Low",
+            "synonyms": [
+              "some"
+            ]
+          },
+          {
+            "value": "Medium",
+            "synonyms": [
+              "exciting"
+            ]
+          },
+          {
+            "value": "Very High",
+            "synonyms": [
+              "crazy"
+            ]
+          },
+          {
+            "value": "None",
+            "synonyms": [
+              "None"
+            ]
+          }
+        ],
+        "valueSelectionStrategy": "TOP_RESOLUTION"
+      },
+      {
+        "name": "chooseAdviser",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "Blaine",
+            "synonyms": [
+              "younger and sharp"
+            ]
+          },
+          {
+            "value": "Jon",
+            "synonyms": [
+              "young and dedicated"
+            ]
+          },
+          {
+            "value": "Maria",
+            "synonyms": [
+              "on Mat leave"
+            ]
+          },
+          {
+            "value": "Jim",
+            "synonyms": [
+              "Old & slow"
+            ]
+          }
+        ],
+        "valueSelectionStrategy": "TOP_RESOLUTION"
+      },
+      {
+        "name": "preferredMeet",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "Call",
+            "synonyms": [
+              "Phone"
+            ]
+          },
+          {
+            "value": "Virtual meet",
+            "synonyms": [
+              "Teams"
+            ]
+          },
+          {
+            "value": "Face to Face",
+            "synonyms": [
+              "Personal"
+            ]
+          }
+        ],
+        "valueSelectionStrategy": "TOP_RESOLUTION"
+      }
+    ],
+    "voiceId": "Nicole",
+    "childDirected": false,
+    "locale": "en-AU",
+    "idleSessionTTLInSeconds": 300,
+    "clarificationPrompt": {
+      "messages": [
+        {
+          "contentType": "PlainText",
+          "content": "Sorry, can you please repeat that?"
+        }
+      ],
+      "maxAttempts": 3
+    },
+    "abortStatement": {
+      "messages": [
+        {
+          "contentType": "PlainText",
+          "content": "Sorry we were unable to help at this stage, have a great day"
+        }
+      ]
+    },
+    "detectSentiment": false,
+    "nluIntentConfidenceThreshold": 0.4,
+    "enableModelImprovements": true
+  }
+}
