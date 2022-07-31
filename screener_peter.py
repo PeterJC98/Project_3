@@ -12,8 +12,8 @@ tickers = si.tickers_dow()
 #Changing string of tickers to contain a dash because that is what yfinance uses
 tickers = [item.replace(".", "-") for item in tickers]
 
-#Setting Time range to 1 year
-start_date = datetime.datetime.now() - datetime.timedelta(days=365)
+#Setting Time range to 1 month
+start_date = datetime.datetime.now() - datetime.timedelta(days=30)
 end_date = datetime.date.today()
 
 #importing data
