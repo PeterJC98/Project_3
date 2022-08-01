@@ -6,14 +6,26 @@
 * Jim Penner
 * Wai Fatt Yee
 
+## API, Modules and Libraries Used
+* Pandas
+* Matplotlib
+* Beautiful Soup
+* Stremlit
+* urllib
+* yFinance
+
 ![](Images/Wall_St_3.jpg)
 
 ## Purpose
-The idea of this project is to develop a tool that helps the decisions making process in entering and exiting a stock or ETF/index through technical indicators.  The main focus is on the Nasdaq index and a screener that indentifies stocks listed in the index that are potentially forming a turning point where they may either move in a bullish or bearish direction.  market that are breaking their 52-week highs or lows and then, overlay the list with additional indicators to support decision making such as,
+The idea of this project is to develop a tool that helps the decisions making process in entering and exiting a stock or ETF/index through technical indicators.  The main focus is on the Nasdaq index and a screener that indentifies stocks listed in the index that are potentially forming a turning point where they may either move in a bullish or bearish direction.  Market that are breaking their 52-week highs or lows and then, overlay the list with additional indicators to support decision making such as,
 
 *   PE ratio
 *   Momentum indicator
 *   Sentiment score of recent news
+
+![](Images/chatBotDemo.png)
+
+Appended to the screener is a robo chat user interface that collects pertinent information from the user with a view to help him/her to make the right decision on asset allocation and investment selections. The user can also opt to run a Monte Carlo Simulation to back-test as well as project the future value of their portfolio.
 
 ![](Images/Buy_Hold_Sell_2.jpg)
 
@@ -23,4 +35,6 @@ This is certainly not meant to be a comprehensive investment model but simply ac
 ![](Images/Stock_Market_1.jpg)
 
 ## Future Enhancements
-We will look at introducing a portfolio tracker for users to track the value of the assets and possibly include a Monte Carlo Simulation feature to project the future value of their investment.
+Essentially, we are looking to develop a tool not only to help users to make investment decisions but also to ensure that they also take into consideration their personal circumstances such as tax implication and retirement planning. It is our hope that this tool can one day be developed into a comprehensive structural advice platform that could end up disrupting and shaking up the financial advisory industry.
+
+![](images/disruptive_innovation.png)
