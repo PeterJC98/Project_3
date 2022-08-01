@@ -17,7 +17,7 @@
 
 ![](Images/Wall_St_3.jpg)
 
-##How to use
+## How to use
 run the following command in gitbash at file location: streamlit run screener_peter.py
 
 ## Purpose
