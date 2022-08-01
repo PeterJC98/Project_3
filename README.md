@@ -12,12 +12,13 @@
 * Beautiful Soup
 * Stremlit
 * urllib
-* yFinance
+* Yahoo Finance API
+* Alpha Vantage API
 
 ![](Images/Wall_St_3.jpg)
 
 ## Purpose
-The idea of this project is to develop a tool that helps the decisions making process in entering and exiting a stock or ETF/index through technical indicators.  The main focus is on the Nasdaq index and a screener that indentifies stocks listed in the index that are potentially forming a turning point where they may either move in a bullish or bearish direction.  Market that are breaking their 52-week highs or lows and then, overlay the list with additional indicators to support decision making such as,
+The idea of this project is to develop a tool that helps the decision making process in entering and exiting a stock or ETF/index through technical, sentiment and fundamental analysis indicators.  The main focus is on the Dow Jones Industrial index using a momentum indicator to signal entry or exit levels in the market and a screener that indentifies stocks listed in the index that may outperform the market based on a fundamental matrix.  We aim to identify stocks in the underlying index that are potentially forming a turning point where they are more likely to move in a bullish direction.  We have overlayed the list of stocks with additional indicators to support decision making such as,
 
 *   PE ratio
 *   Momentum indicator
