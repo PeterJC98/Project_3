@@ -17,6 +17,9 @@
 
 ![](Images/Wall_St_3.jpg)
 
+##How to use
+run the following command in gitbash at file location: streamlit run screener_peter.py
+
 ## Purpose
 The idea of this project is to develop a tool that helps the decision making process in entering and exiting a stock or ETF/index through technical, sentiment and fundamental analysis indicators.  The main focus is on the Dow Jones Industrial index using a momentum indicator to signal entry or exit levels in the market and a screener that indentifies stocks listed in the index that may outperform the market based on a fundamental matrix.  We aim to identify stocks in the underlying index that are potentially forming a turning point where they are more likely to move in a bullish direction.  We have overlayed the list of stocks with additional indicators to support decision making such as,
 
