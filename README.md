@@ -35,6 +35,7 @@ This is certainly not meant to be a comprehensive investment model but simply ac
 ![](Images/Stock_Market_1.jpg)
 
 ## Future Enhancements
+![](images/disruptive_innovation.png)
 Essentially, we are looking to develop a tool not only to help users to make investment decisions but also to ensure that they also take into consideration their personal circumstances such as tax implication and retirement planning. It is our hope that this tool can one day be developed into a comprehensive structural advice platform that could end up disrupting and shaking up the financial advisory industry.
 
-![](images/disruptive_innovation.png)
+
